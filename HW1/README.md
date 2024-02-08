@@ -43,7 +43,7 @@ Table customers { \
   first_name varchar \
   last_name varchar \
   gender varchar \
-  DOB timestamp \
+  DOB date \
   job_title varchar \
   job_industry_category varchar \
   wealth_segment varchar \
@@ -55,7 +55,7 @@ Table customers { \
 Table address { \
   id integer [primary key] \
   street varchar \
-  building integer \
+  building varchar \
   postcode integer \
 }
 
