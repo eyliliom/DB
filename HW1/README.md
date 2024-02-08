@@ -76,4 +76,4 @@ Ref: address.postcode > region.postcode
 
 ## Загрузка данных
 
-Данные были загружены через DBeaver, скриншоты в папке **insert_data**
+Данные были загружены через DBeaver, скриншоты в папке *insert_data/*
