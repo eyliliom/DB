@@ -12,6 +12,59 @@
 
 В таблице **customers** количество уникальных адресов (адрес + индекс) равно количеству клиентов, так что можно было бы оставить и так. Но так как задача состоит в проектировании базы, я бы выделила информацию об адресах в отдельную таблицу, создала уникальные ключи. Полученную таблицу можно привязать к **customers**, если считать, что это адреса прописки. Однако если адреса подразумеваются как адреса доставки, я бы их привязала к таблице **transactions**, обеспечив этим большую гибкость.
 
+В итоге получены следующие таблицы (синтаксис DBML)
+
+Table transactions {
+  transaction_id integer [primary key]
+  customer_id integer
+  item_id integer
+  address_id integer
+  transaction_date timestamp
+  online_order varchar
+  order_status varchar
+}
 
 
+Table product {
+  id integer [primary key]
+  product_id integer
+  brand varchar
+  product_line varchar
+  product_class varchar
+  product_size varchar
+  list_price float
+  standard_cost float
+}
+
+Table customers {
+  id integer [primary key]
+  first_name varchar
+  last_name varchar
+  gender varchar
+  DOB timestamp
+  job_title varchar
+  job_industry_category varchar
+  wealth_segment varchar
+  deceased_indicator varchar
+  owns_car varchar
+  property_valuation integer
+}
+
+Table address {
+  id integer [primary key]
+  street varchar
+  building integer
+  postcode integer
+}
+
+Table region {
+  postcode integer [primary key]
+  state varchar
+  country varchar
+}
+
+Ref: transactions.customer_id > customers.id
+Ref: transactions.address_id > address.id
+Ref: transactions.item_id > product.id
+Ref: address.postcode > region.postcode
 
