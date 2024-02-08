@@ -14,7 +14,7 @@
 
 ## Схема
 
-В итоге получены следующие таблицы (синтаксис DBML)
+В итоге получены следующие таблицы (синтаксис DBML, схема находится в *schema.pdf*)
 
 Table transactions { \
   transaction_id integer [primary key] \
