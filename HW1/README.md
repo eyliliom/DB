@@ -70,3 +70,6 @@ Ref: transactions.address_id > address.id \
 Ref: transactions.item_id > product.id \
 Ref: address.postcode > region.postcode
 
+## Загрузка данных
+
+Данные были загружены через DBeaver, скриншоты в папке **insert_data**
