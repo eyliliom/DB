@@ -25,46 +25,46 @@ Table transactions { \
 }
 
 
-Table product {
-  id integer [primary key]
-  product_id integer
-  brand varchar
-  product_line varchar
-  product_class varchar
-  product_size varchar
-  list_price float
-  standard_cost float
+Table product { \
+  id integer [primary key] \
+  product_id integer \
+  brand varchar \
+  product_line varchar \
+  product_class varchar \
+  product_size varchar \
+  list_price float \
+  standard_cost float \
 }
 
-Table customers {
-  id integer [primary key]
-  first_name varchar
-  last_name varchar
-  gender varchar
-  DOB timestamp
-  job_title varchar
-  job_industry_category varchar
-  wealth_segment varchar
-  deceased_indicator varchar
-  owns_car varchar
-  property_valuation integer
+Table customers { \
+  id integer [primary key] \
+  first_name varchar \
+  last_name varchar \
+  gender varchar \
+  DOB timestamp \
+  job_title varchar \
+  job_industry_category varchar \
+  wealth_segment varchar \
+  deceased_indicator varchar \
+  owns_car varchar \
+  property_valuation integer \
 }
 
-Table address {
-  id integer [primary key]
-  street varchar
-  building integer
-  postcode integer
+Table address { \
+  id integer [primary key] \
+  street varchar \
+  building integer \
+  postcode integer \
 }
 
-Table region {
-  postcode integer [primary key]
-  state varchar
-  country varchar
+Table region { \
+  postcode integer [primary key] \
+  state varchar \
+  country varchar \
 }
 
-Ref: transactions.customer_id > customers.id
-Ref: transactions.address_id > address.id
-Ref: transactions.item_id > product.id
+Ref: transactions.customer_id > customers.id \
+Ref: transactions.address_id > address.id \
+Ref: transactions.item_id > product.id \
 Ref: address.postcode > region.postcode
 
