@@ -14,14 +14,14 @@
 
 В итоге получены следующие таблицы (синтаксис DBML)
 
-Table transactions {
-  transaction_id integer [primary key]
-  customer_id integer
-  item_id integer
-  address_id integer
-  transaction_date timestamp
-  online_order varchar
-  order_status varchar
+Table transactions { \
+  transaction_id integer [primary key] \
+  customer_id integer \
+  item_id integer \
+  address_id integer \
+  transaction_date timestamp \
+  online_order varchar \
+  order_status varchar \
 }
 
 
