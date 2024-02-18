@@ -28,7 +28,7 @@ create table Customers (
 	job_title VARCHAR(50),
 	job_industry_category VARCHAR(50),
 	wealth_segment VARCHAR(30),
-	decreased_indicator VARCHAR(30),
+	deceased_indicator VARCHAR(30),
 	owns_car VARCHAR(30),
 	property_valuation INT	
 );
