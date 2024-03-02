@@ -130,10 +130,10 @@ from
 -- Максимальная сумма
 with ss as	
 	(select distinct c.customer_id,c.first_name, c.last_name,
-		coalesce(sum(t.list_price)
+		coalesce(sum(t.list_price, 0)
 		over (partition by c.customer_id), 0) as transaction_sum
 	from customer c
-	join transaction t on c.customer_id = t.customer_id)
+	left join transaction t on c.customer_id = t.customer_id)
 select * from ss
 where ss.transaction_sum = (select max(ss.transaction_sum) from ss)
 
@@ -143,7 +143,7 @@ with ss as
 		coalesce(sum(t.list_price)
 		over (partition by c.customer_id), 0) as transaction_sum
 	from customer c
-	join transaction t on c.customer_id = t.customer_id)
+	left join transaction t on c.customer_id = t.customer_id)
 select * from ss
 where ss.transaction_sum = (select min(ss.transaction_sum) from ss)
 
