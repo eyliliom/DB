@@ -130,7 +130,7 @@ from
 -- Максимальная сумма
 with ss as	
 	(select distinct c.customer_id,c.first_name, c.last_name,
-		coalesce(sum(t.list_price, 0)
+		coalesce(sum(t.list_price)
 		over (partition by c.customer_id), 0) as transaction_sum
 	from customer c
 	left join transaction t on c.customer_id = t.customer_id)
